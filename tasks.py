@@ -36,8 +36,14 @@ step(-1)
 
 # Your code here:
 # -----------------------------------------------
-def ReLu
+def ReLu(array, cutoff = 0):
+    array_copy = numpy.array(array)             # Convert input to numpy array if it's not already
+    array_copy[array_copy < cutoff] = cutoff    # Set elements smaller than cutoff to cutoff
+    return array_copy                           # Return modified array
 
+array1 = [-5, -4, 0, 3, 8]
+
+ReLu(array1)
 
 # -----------------------------------------------
 
@@ -52,7 +58,14 @@ def ReLu
 # Your code here:
 # -----------------------------------------------
 
-def neural_net_layer
+def neural_net_layer(matrix, vector):
+    result = numpy.dot(matrix, vector)  # matrix multiplication
+    result = ReLu(result) # apply ReLu function
+    return result
 
+# test the function
+matrix = numpy.array([[4, 2, 3], [7, 9, -2]])
+vector = numpy.array([4, 1, 6])
+neural_net_layer(matrix, vector)
 
 # ------------------------------------------
