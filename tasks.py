@@ -13,7 +13,15 @@ import numpy
 # Your code here:
 # -----------------------------------------------
 
-def step
+def step(number):
+    if number > 0:
+      return 1
+    else:
+      return -1
+
+step(5)
+step(0)
+step(-1)
 
 
 # -----------------------------------------------
